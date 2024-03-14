@@ -4,3 +4,6 @@
 [submodule "submodules/crypto-specs"]
 	path = submodules/crypto-specs
 	url = git@github.com:formosa-crypto/crypto-specs.git
+[submodule "test/external/crypto_kem/xwing/common/JoaoDiogoDuarte_xwing"]
+	path = test/external/crypto_kem/xwing/common/JoaoDiogoDuarte_xwing
+	url = https://github.com/JoaoDiogoDuarte/xwing.git
