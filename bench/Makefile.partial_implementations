@@ -5,8 +5,8 @@
 EXTERNAL_PATH       = $(subst $(BIN),external,$(@D))
 EXTERNAL_LIB_STATIC = ../test/$(EXTERNAL_PATH)/$(subst -,_,$(subst /,_,$(EXTERNAL_PATH))).a
 EXTERNAL_LIB_SHARED = $(abspath ../test/$(EXTERNAL_PATH)/$(subst -,_,$(subst /,_,$(EXTERNAL_PATH))).so)
-EXTERNAL_COMPILE1   = $(CC) $(CFLAGS) -o $@ $(DEFINE) $(DNAMESPACES) $(INCLUDES) $(MAIN) $(PRINT) $(ASM) $(RANDLIB) $(EXTERNAL_LIB) -lgsl $(CIL)
-EXTERNAL_COMPILE2   = $(CC) $(CFLAGS) -o $@ $(DEFINE) $(DNAMESPACES) $(INCLUDES) $(MAIN) $(PRINT) $(ASM) $(RANDLIB) -lgsl $(EXTERNAL_LIB_SHARED)
+EXTERNAL_COMPILE1   = $(CC) $(CFLAGS) -o $@ $(DEFINE) $(DNAMESPACES) $(INCLUDES) $(MAIN) $(PRINT) $(ASM) $(RANDLIB) $(EXTERNAL_LIB) -lblas -lgsl $(CIL)
+EXTERNAL_COMPILE2   = $(CC) $(CFLAGS) -o $@ $(DEFINE) $(DNAMESPACES) $(INCLUDES) $(MAIN) $(PRINT) $(ASM) $(RANDLIB) -lblas -lgsl $(EXTERNAL_LIB_SHARED)
 
 
 #-- falcon512
