@@ -1,9 +1,4 @@
 # Libjade
-[submodule "test/external/crypto_hash/sha3-256/common/Kyber_FIPS202"]
-	path = test/external/crypto_hash/sha3-256/common/Kyber_FIPS202
-	url = https://github.com/JoaoDiogoDuarte/kyber-mlkem-static/
-	branch = justhash
-
 Libjade is a formally verified cryptographic library written in 
 [the jasmin programming language](https://github.com/jasmin-lang/jasmin)
 with computer-verified proofs in [EasyCrypt](https://github.com/EasyCrypt/easycrypt).
