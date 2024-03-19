@@ -1,0 +1,14 @@
+make -C ../src/crypto_kem/xwing/amd64/avx2 || true
+
+cc -Wall -Wno-unused-function -march=native -O3 -fomit-frame-pointer -fwrapv -fPIC -fPIE -o bin/crypto_kem/xwing/amd64/avx2/bench -DRUNS=2 -DST_ON -DJADE_NAMESPACE=JADE_KEM_xwing_amd64_avx2 -DJADE_NAMESPACE_LC=jade_kem_xwing_amd64_avx2 -I../src/crypto_kem/xwing/amd64/avx2/include/ -Icommon/ -I../ext/randombytes/ common/crypto_kem.c ../src/crypto_kem/xwing/amd64/avx2/kem.s ../ext/randombytes/librandombytes.a -lblas -lgsl  || true
+make -C ../src/crypto_kem/xwing/amd64/c-avx2 || true
+
+cc -Wall -Wno-unused-function -march=native -O3 -fomit-frame-pointer -fwrapv -fPIC -fPIE -o bin/crypto_kem/xwing/amd64/c-avx2/bench -DRUNS=2 -DST_ON -DJADE_NAMESPACE=JADE_KEM_xwing_amd64_c_avx2 -DJADE_NAMESPACE_LC=jade_kem_xwing_amd64_c_avx2 -I../src/crypto_kem/xwing/amd64/c-avx2/include/ -Icommon/ -I../ext/randombytes/ common/crypto_kem.c  ../src/crypto_kem/xwing/amd64/c-avx2/kem.s ../ext/randombytes/librandombytes.a -lblas -lgsl /home/joao/Projects/kems/libjade/test/external/crypto_kem/xwing/amd64/c-avx2/external_crypto_kem_xwing_amd64_c_avx2.so -l25519  || true
+make -C ../src/crypto_kem/xwing/amd64/c-ref || true
+
+make -C ../test/external/crypto_kem/xwing/amd64/c-ref
+
+cc -Wall -Wno-unused-function -march=native -O3 -fomit-frame-pointer -fwrapv -fPIC -fPIE -o bin/crypto_kem/xwing/amd64/c-ref/bench -DRUNS=2 -DST_ON -DJADE_NAMESPACE=JADE_KEM_xwing_amd64_c_ref -DJADE_NAMESPACE_LC=jade_kem_xwing_amd64_c_ref -I../src/crypto_kem/xwing/amd64/c-ref/include/ -Icommon/ -I../ext/randombytes/ common/crypto_kem.c  ../src/crypto_kem/xwing/amd64/c-ref/kem.s ../ext/randombytes/librandombytes.a -lblas -lgsl /home/joao/Projects/kems/libjade/test/external/crypto_kem/xwing/amd64/c-ref/external_crypto_kem_xwing_amd64_c_ref.so -l25519  || true
+make -C ../src/crypto_kem/xwing/amd64/ref || true
+
+cc -Wall -Wno-unused-function -march=native -O3 -fomit-frame-pointer -fwrapv -fPIC -fPIE -o bin/crypto_kem/xwing/amd64/ref/bench -DRUNS=2 -DST_ON -DJADE_NAMESPACE=JADE_KEM_xwing_amd64_ref -DJADE_NAMESPACE_LC=jade_kem_xwing_amd64_ref -I../src/crypto_kem/xwing/amd64/ref/include/ -Icommon/ -I../ext/randombytes/ common/crypto_kem.c ../src/crypto_kem/xwing/amd64/ref/kem.s ../ext/randombytes/librandombytes.a -lblas -lgsl  || true

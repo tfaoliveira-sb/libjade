@@ -72,6 +72,19 @@ $(XWING_C_AVX2_BINARIES): __phony | $(XWING_C_AVX2_DIR) $(XWING_C_AVX2_DIR)/$(CI
 	$(EXTERNAL_COMPILE2) -l25519 $(CIL) || true
 
 #-- ---------------------------------------------------------------------------
+#-- xwing_naive
+
+#--
+XWING_NAIVE_C_AVX2_DIR:=bin/crypto_kem/xwing_naive/amd64/c-avx2/
+XWING_NAIVE_C_AVX2_BINARIES:=$(foreach bin,$(TESTING_BINARIES),$(XWING_NAIVE_C_AVX2_DIR)$(bin))
+
+$(XWING_NAIVE_C_AVX2_BINARIES): __phony | $(XWING_NAIVE_C_AVX2_DIR) $(XWING_NAIVE_C_AVX2_DIR)/$(CID)
+	$(MAKE) -C $(IDIR) || true
+	$(CIC)
+	$(MAKE) -C $(EXTERNAL_PATH)
+	$(EXTERNAL_COMPILE2) -l25519 $(CIL) || true
+
+#-- ---------------------------------------------------------------------------
 #-- sha3fips
 
 #--
@@ -89,6 +102,7 @@ clean-external:
 	$(MAKE) -C external/crypto_sign/falcon/falcon512/amd64/avx2 clean
 	$(MAKE) -C external/crypto_kem/xwing/common/JoaoDiogoDuarte_xwing/src/crypto_kem/xwing/ref/ clean
 	$(MAKE) -C external/crypto_kem/xwing/common/JoaoDiogoDuarte_xwing/src/crypto_kem/xwing/avx2/ clean
+	$(MAKE) -C external/crypto_kem/xwing/common/JoaoDiogoDuarte_xwing_naive/src/crypto_kem/xwing_naive/avx2/ clean
 	$(MAKE) -C external/crypto_hash/sha3-256/common/Kyber_FIPS202/avx2/ clean
 
 
