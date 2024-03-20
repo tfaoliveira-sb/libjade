@@ -1,6 +1,0 @@
-make -C ../src/crypto_kem/xwing_naive/amd64/c-avx2 || true
-make[1]: Entering directory '/home/joao/Projects/kems/libjade/src/crypto_kem/xwing_naive/amd64/c-avx2'
-make[1]: 'kem.s' is up to date.
-make[1]: Leaving directory '/home/joao/Projects/kems/libjade/src/crypto_kem/xwing_naive/amd64/c-avx2'
-true 
-cc -Wall -Wno-unused-function -march=native -O3 -fomit-frame-pointer -fwrapv -fPIC -fPIE -o bin/crypto_kem/xwing_naive/amd64/c-avx2/bench -DRUNS=2 -DST_ON -DJADE_NAMESPACE=JADE_KEM_xwing_naive_amd64_c_avx2 -DJADE_NAMESPACE_LC=jade_kem_xwing_naive_amd64_c_avx2 -I../src/crypto_kem/xwing_naive/amd64/c-avx2/include/ -Icommon/ -I../ext/randombytes/ common/crypto_kem.c ../src/crypto_kem/xwing_naive/amd64/c-avx2/kem.s ../ext/randombytes/librandombytes.a -lblas -lgsl  || true
